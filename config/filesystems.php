@@ -64,6 +64,12 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        // used for Backpack/LogManager
+        'storage' => [
+            'driver' => 'local',
+            'root'   => storage_path(),
+        ],
+
     ],
 
 ];
