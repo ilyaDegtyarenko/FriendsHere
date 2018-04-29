@@ -9,7 +9,8 @@
         "backpack/crud": "^3.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "spatie/laravel-permission": "^2.12"
     },
     "require-dev": {
         "backpack/generators": "^1.1",
