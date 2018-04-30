@@ -13,8 +13,5 @@
 
 Auth::routes();
 
-Route::get('/{name}', [
-        'as' => 'home',
-        'uses' => 'HomeController@index'
-    ]
-)->where('name', 'home|/|')->name('home');
+Route::get('/{home}', 'HomeController@index')->where('home', 'home|/|')->name('home');
+

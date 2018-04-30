@@ -1,13 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ilya
- * Date: 29.04.18
- * Time: 17:43
- */
 
 return [
-    'user_singular' => 'Пользователь',
-    'user_plural' => 'Пользователи',
-    'user_whom' => 'Пользователя',
+    'user' => [
+        'singular' => 'Пользователь',
+        'plural' => 'Пользователи',
+        'whom' => 'Пользователя',
+    ],
+    'role' => [
+        'singular' => 'Роль',
+        'plural' => 'Роли',
+    ],
+    'permission' => [
+        'singular' => 'Разрешение',
+        'plural' => 'Разрешения',
+    ],
+    'log' => [
+        'singular' => 'Лог',
+        'plural' => 'Логи',
+    ],
 ];

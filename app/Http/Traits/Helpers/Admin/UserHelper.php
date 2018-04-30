@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Helpers\Admin;
+namespace App\Http\Traits\Helpers\Admin;
 
-class User
+trait UserHelper
 {
     /**
      * Return admin model
@@ -24,12 +24,17 @@ class User
         return config('backpack.base.route_prefix') . '/user';
     }
 
-    public static function entity()
+    /**
+     * Return admin entities
+     *
+     * @return object
+     */
+    public static function entities()
     {
         return (object)[
-            'singular' => trans('entities.user_singular'),
-            'plural' => trans('entities.user_plural'),
-            'whom' => trans('entities.user_whom'),
+            'singular' => trans('entities.user.singular'),
+            'plural' => trans('entities.user.plural'),
+            'whom' => trans('entities.user.whom'),
         ];
     }
 }

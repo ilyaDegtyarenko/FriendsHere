@@ -60,7 +60,12 @@ Route::group([
             'namespace' => 'App\Http\Controllers\Admin',
         ], function () {
 
-            Route::resource('user', 'UserCrudController');
+            /*Users*/
+            CRUD::resource('user', 'UserCrudController');
+
+            /*Permissions*/
+            CRUD::resource('role', 'PermissionCrudController');
+            CRUD::resource('permission', 'PermissionCrudController');
 
         });
 

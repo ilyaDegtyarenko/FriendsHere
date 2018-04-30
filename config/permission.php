@@ -13,7 +13,7 @@ return [
          * `Spatie\Permission\Contracts\Permission` contract.
          */
 
-        'permission' => Spatie\Permission\Models\Permission::class,
+        'permission' => \App\Models\Admin\Permission::class,
 
         /*
          * When using the "HasRoles" trait from this package, we need to know which
@@ -24,8 +24,13 @@ return [
          * `Spatie\Permission\Contracts\Role` contract.
          */
 
-        'role' => Spatie\Permission\Models\Role::class,
+        'role' => \App\Models\Admin\Role::class,
 
+    ],
+
+    'routes' => [
+        'role' => config('backpack.base.route_prefix') . '/role',
+        'permission' => config('backpack.base.route_prefix') . '/permission'
     ],
 
     'table_names' => [
