@@ -13,7 +13,7 @@ class Role
         debug(['Role middleware: ' => $role]);
 
         if (Auth::guest()) {
-            throw UnauthorizedException::notLoggedIn();
+            return redirect('/');
         }
 
         $roles = is_array($role)
@@ -21,6 +21,7 @@ class Role
             : explode('|', $role);
 
         if (!Auth::user()->hasAnyRole($roles)) {
+            abort(404); //return
             throw UnauthorizedException::forRoles($roles);
         }
 

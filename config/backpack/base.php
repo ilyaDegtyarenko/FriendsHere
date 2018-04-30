@@ -24,7 +24,7 @@ return [
     */
 
     // Project name. Shown in the breadcrumbs and a few other places.
-    'project_name' => 'Backpack',
+    'project_name' => appName('full'),
 
     // Menu logos
     'logo_lg' => appName('full'),

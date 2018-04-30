@@ -12,7 +12,7 @@ class Permission
         debug(['Permission middleware: ' => $permission]);
 
         if (app('auth')->guest()) {
-            throw UnauthorizedException::notLoggedIn();
+            return redirect('/');
         }
 
         $permissions = is_array($permission)
@@ -25,6 +25,7 @@ class Permission
             }
         }
 
+        abort(404); //return
         throw UnauthorizedException::forPermissions($permissions);
     }
 }
