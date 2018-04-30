@@ -65,8 +65,10 @@
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg">{!! config('backpack.base.logo_lg') !!}</span>
         </a>
+
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
+
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">{{ trans('backpack::base.toggle_navigation') }}</span>
@@ -76,7 +78,19 @@
           </a>
 
           @include('backpack::inc.menu')
+
+            <ul>
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
         </nav>
+
       </header>
 
       <!-- =============================================== -->

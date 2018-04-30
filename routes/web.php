@@ -11,7 +11,14 @@
 |
 */
 
-Auth::routes();
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+], function () {
 
-Route::get('/{home}', 'HomeController@index')->where('home', 'home|/|')->name('home');
+    Auth::routes();
+    Route::get('/', 'HomeController@index');
+    Route::get('home', 'HomeController@index');
+});
+
 

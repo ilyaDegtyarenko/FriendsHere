@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    {{ trans('entities.user.singular') }}
                 </div>
             </div>
         </div>
