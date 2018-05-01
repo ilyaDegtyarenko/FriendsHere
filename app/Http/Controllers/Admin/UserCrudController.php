@@ -60,7 +60,7 @@ class UserCrudController extends CrudController
                 'name' => 'permissions',
                 'entity' => 'permissions',
                 'attribute' => 'name',
-                'model' => self::permissionModel('permissions'),
+                'model' => self::permissionModel('permission'),
             ],
         ]);
 
@@ -98,7 +98,7 @@ class UserCrudController extends CrudController
                         'entity' => 'roles',
                         'entity_secondary' => 'permissions',
                         'attribute' => 'label_ru',
-                        'model' => self::permissionModel('roles'),
+                        'model' => self::permissionModel('role'),
                         'pivot' => true,
                         'number_columns' => 3,
                     ],
@@ -108,7 +108,7 @@ class UserCrudController extends CrudController
                         'entity' => 'permissions',
                         'entity_primary' => 'roles',
                         'attribute' => 'label_ru',
-                        'model' => self::permissionModel('permissions'),
+                        'model' => self::permissionModel('permission'),
                         'pivot' => true,
                         'number_columns' => 1,
                     ],
