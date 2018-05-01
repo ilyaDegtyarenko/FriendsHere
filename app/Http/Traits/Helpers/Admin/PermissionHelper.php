@@ -8,12 +8,13 @@ trait PermissionHelper
      * Return permission model
      *
      * @param null $name
+     * @param bool $debug
      * @return \Illuminate\Config\Repository|mixed
      */
-    public static function model($name = null)
+    public static function model($name = null, $debug = true)
     {
         $name = $name ?? self::core();
-        \DebugBar::addMessage(config('permission.models.' . $name), 'PermissionHelper (model): ');
+        if ($debug) \DebugBar::addMessage(config('permission.models.' . $name), 'PermissionHelper (model): ');
         return config('permission.models.' . $name);
     }
 
@@ -21,12 +22,13 @@ trait PermissionHelper
      * Return permission route
      *
      * @param null $name
+     * @param bool $debug
      * @return mixed
      */
-    public static function route($name = null)
+    public static function route($name = null, $debug = true)
     {
         $name = $name ?? self::core();
-        \DebugBar::addMessage(config('permission.routes')[$name], 'PermissionHelper (route): ');
+        if ($debug) \DebugBar::addMessage(config('permission.routes')[$name], 'PermissionHelper (route): ');
         return config('permission.routes')[$name];
     }
 
