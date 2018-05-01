@@ -102,12 +102,24 @@ class PermissionCrudController extends CrudController
         ]);
     }
 
+    /**
+     * Store method
+     *
+     * @param PermissionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(PermissionRequest $request)
     {
         $redirect_location = parent::storeCrud($request);
         return $redirect_location;
     }
 
+    /**
+     * Update method
+     *
+     * @param PermissionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(PermissionRequest $request)
     {
         $redirect_location = parent::updateCrud($request);

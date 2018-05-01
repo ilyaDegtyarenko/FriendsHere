@@ -155,7 +155,7 @@ class Role extends Model implements RoleContract
     }
 
     /**
-     * Return relationship with permissions
+     * Returns relationship with permissions
      *
      * @return BelongsToMany
      */

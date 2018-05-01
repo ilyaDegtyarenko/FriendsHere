@@ -158,7 +158,7 @@ class Permission extends Model implements PermissionContract
     }
 
     /**
-     * Return relationship with roles
+     * Returns relationship with roles
      *
      * @return BelongsToMany
      */

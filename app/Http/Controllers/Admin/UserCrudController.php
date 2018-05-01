@@ -115,7 +115,16 @@ class UserCrudController extends CrudController
                 ],
             ],
         ]);
-
+        
+//        if (!config('backpack.permissionmanager.allow_permission_create')) {
+//            $this->crud->denyAccess('create');
+//        }
+//        if (!config('backpack.permissionmanager.allow_permission_update')) {
+//            $this->crud->denyAccess('update');
+//        }
+//        if (!config('backpack.permissionmanager.allow_permission_delete')) {
+//            $this->crud->denyAccess('delete');
+//        }
     }
 
     /**

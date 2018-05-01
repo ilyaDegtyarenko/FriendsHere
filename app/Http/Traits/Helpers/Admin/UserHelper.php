@@ -2,10 +2,12 @@
 
 namespace App\Http\Traits\Helpers\Admin;
 
+use App\Models\Admin\Permission;
+
 trait UserHelper
 {
     /**
-     * Return admin model
+     * Returns admin model
      *
      * @param bool $debug
      * @return \Illuminate\Config\Repository|mixed
@@ -17,7 +19,7 @@ trait UserHelper
     }
 
     /**
-     * Return admin route
+     * Returns admin route
      *
      * @param bool $debug
      * @return string
@@ -29,7 +31,7 @@ trait UserHelper
     }
 
     /**
-     * Return admin entities
+     * Returns admin entities
      *
      * @return object
      */
@@ -40,5 +42,58 @@ trait UserHelper
             'plural' => trans('entities.user.plural'),
             'whom' => trans('entities.user.whom'),
         ];
+    }
+
+    /**
+     * Returns user permissions
+     *
+     * @param null $request
+     * @return object
+     */
+    public static function userCan($request = null)
+    {
+        if (!$request) {
+            return array_pluck(auth()->user()->getAllPermissions()->all(), 'name');
+        }
+
+        if (is_string($request)) {
+            return auth()->user()->can($request);
+        }
+
+        if (is_array($request)) {
+            $permissionsAll = array_pluck(Permission::all(), 'name');
+
+            $can = [];
+            $canNot = [];
+            $canAll = true;
+            $NonexistentPermissions = [];
+            foreach ($request as $permission) {
+                if (!in_array($permission, $permissionsAll)) {
+                    $NonexistentPermissions[] = $permission;
+                    $NonexistentPermissionsString[] = ucfirst($permission);
+                } else {
+                    if (auth()->user()->can($permission)) {
+                        $can[] = $permission;
+                        $canString[] = ucfirst($permission);
+                    } else if (!auth()->user()->can($permission)) {
+                        $canNot[] = $permission;
+                        $canNotString[] = ucfirst($permission);
+                        $canAll = false;
+                    }
+                }
+            }
+
+            return (object)[
+                'can' => $can,
+                'can_string' => str_finish(implode(', ', $canString), '.'),
+                'can_not' => $canNot,
+                'can_not_string' => str_finish(implode(', ', $canNotString), '.'),
+                'nonexistent_permissions' => $NonexistentPermissions,
+                'nonexistent_permissions_string' => str_finish(implode(', ', $NonexistentPermissionsString), '.'),
+                'can_all' => $canAll,
+            ];
+        }
+
+        abort(500, 'Undefined error in UserHelper trait. Route name: ' . request()->route()->getName());
     }
 }

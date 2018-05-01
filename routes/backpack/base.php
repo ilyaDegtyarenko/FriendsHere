@@ -15,6 +15,8 @@ Route::group([
     'prefix' => config('backpack.base.route_prefix'),
 ], function () {
 
+//    abort_unless(auth()->user()->hasRole('admin'), 403, 'Access forbidden');
+
     //    LaravelLocalization::setLocale()
     //    , 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'
     Route::group([
