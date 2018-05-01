@@ -8,8 +8,10 @@ return [
     ],
     'label' => [
         'name' => 'Имя',
+        'label' => 'Ярлык',
         'password' => 'Пароль',
         'password_confirmation' => 'Подтверждение пароля',
         'email' => 'Почта',
+        'updated_at' => 'Последние изменения',
     ],
 ];

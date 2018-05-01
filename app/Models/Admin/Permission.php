@@ -156,4 +156,14 @@ class Permission extends Model implements PermissionContract
     {
         return app(PermissionRegistrar::class)->getPermissions();
     }
+
+    /**
+     * Return relationship with roles
+     *
+     * @return BelongsToMany
+     */
+    public function permissionRoles()
+    {
+        return $this->belongsToMany(Role::class, 'role_has_permissions', 'permission_id', 'role_id');
+    }
 }

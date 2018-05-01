@@ -14,7 +14,7 @@ trait PermissionHelper
     public static function permissionModel($name = null, $debug = true)
     {
         $name = $name ?? self::permissionCore();
-        if ($debug) \DebugBar::addMessage(config('permission.models.' . $name), 'PermissionHelper (model): ');
+        if ($debug) \DebugBar::addMessage(config('permission.models.' . $name), 'PermissionHelper (permissionModel): ');
         return config('permission.models.' . $name);
     }
 
@@ -28,7 +28,7 @@ trait PermissionHelper
     public static function permissionRoute($name = null, $debug = true)
     {
         $name = $name ?? self::permissionCore();
-        if ($debug) \DebugBar::addMessage(config('permission.routes')[$name], 'PermissionHelper (route): ');
+        if ($debug) \DebugBar::addMessage(config('permission.routes')[$name], 'PermissionHelper (permissionRoute): ');
         return config('permission.routes')[$name];
     }
 
@@ -56,5 +56,32 @@ trait PermissionHelper
     {
         $core = explode('/', request()->path());
         return (string)$core[1];
+    }
+
+    /**
+     * Return reverse data
+     *
+     * @param bool $debug
+     * @return object
+     */
+    public static function permissionReverseData($debug = true)
+    {
+        if (self::permissionCore() === 'role') {
+            $model = self::permissionModel('permission');
+            $method = 'rolePermissions';
+            $label = self::permissionEntities('permission')->plural;
+        };
+
+        if (self::permissionCore() === 'permission') {
+            $model = self::permissionModel('role');
+            $method = 'permissionRoles';
+            $label = self::permissionEntities('role')->plural;
+        };
+
+        return (object)[
+            'model' => $model,
+            'method' => $method,
+            'label' => $label,
+        ];
     }
 }

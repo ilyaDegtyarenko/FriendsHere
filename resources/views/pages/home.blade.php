@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ trans('entities.user.singular') }}
+                    <a href='{{ backpack_url('dashboard') }}'>{{ trans('structure.title.dashboard') }}</a>
                 </div>
             </div>
         </div>
