@@ -9,7 +9,7 @@ class Permission
 {
     public function handle($request, Closure $next, $permission)
     {
-        debug(['Permission middleware: ' => $permission]);
+        \DebugBar::addMessage($permission, 'Permission middleware: ');
 
         if (app('auth')->guest()) {
             return redirect('/');

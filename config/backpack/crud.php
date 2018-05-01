@@ -38,7 +38,7 @@ return [
     // How many items should be shown by default by the Datatable?
     // This value can be overwritten on a specific CRUD by calling
     // $this->crud->setDefaultPageLength(50);
-    'default_page_length' => 25,
+    'default_page_length' => 20,
 
     // A 1D array of options which will be used for both the displayed option and the value, or
     // A 2D array in which the first array is used to define the value options and the second array the displayed options
@@ -235,7 +235,7 @@ return [
         // "fr_SN" => "French (Senegal)",
         // "fr_CH" => "French (Switzerland)",
         // "fr_TG" => "French (Togo)",
-        'fr' => 'French',
+        //'fr' => 'French',
         // "ff_SN" => "Fulah (Senegal)",
         // "ff" => "Fulah",
         // "gl_ES" => "Galician (Spain)",
@@ -281,7 +281,7 @@ return [
         // "ga" => "Irish",
         // "it_IT" => "Italian (Italy)",
         // "it_CH" => "Italian (Switzerland)",
-        'it' => 'Italian',
+        //'it' => 'Italian',
         // "ja_JP" => "Japanese (Japan)",
         // "ja" => "Japanese",
         // "kea_CV" => "Kabuverdianu (Cape Verde)",
@@ -386,7 +386,7 @@ return [
         // "pa" => "Punjabi",
         // "ro_MD" => "Romanian (Moldova)",
         // "ro_RO" => "Romanian (Romania)",
-        'ro' => 'Romanian',
+        //'ro' => 'Romanian',
         // "rm_CH" => "Romansh (Switzerland)",
         // "rm" => "Romansh",
         // "rof_TZ" => "Rombo (Tanzania)",

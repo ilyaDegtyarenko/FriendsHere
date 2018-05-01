@@ -11,6 +11,7 @@ trait UserHelper
      */
     public static function model()
     {
+        \DebugBar::addMessage(config('backpack.base.admin_model'), 'UserHelper (model): ');
         return config('backpack.base.admin_model');
     }
 
@@ -21,6 +22,7 @@ trait UserHelper
      */
     public static function route()
     {
+        \DebugBar::addMessage(config('backpack.base.route_prefix') . '/user', 'UserHelper (route): ');
         return config('backpack.base.route_prefix') . '/user';
     }
 

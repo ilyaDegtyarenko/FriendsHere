@@ -4,6 +4,7 @@ namespace App\Models\Admin;
 
 use App\Models\User;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class BackpackUser extends User
 {

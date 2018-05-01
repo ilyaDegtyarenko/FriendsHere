@@ -10,7 +10,7 @@ class Role
 {
     public function handle($request, Closure $next, $role)
     {
-        debug(['Role middleware: ' => $role]);
+        \DebugBar::addMessage($role, 'Role middleware: ');
 
         if (Auth::guest()) {
             return redirect('/');

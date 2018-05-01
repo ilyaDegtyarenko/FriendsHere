@@ -11,12 +11,12 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        try {
-            \Spatie\Permission\Models\Role::create(['name' => 'admin']);
-            \App\Models\User::first()->getAllPermissions();
-            \App\Models\User::first()->assignRole('admin');
-        } catch (\Exception $e) {
-        } catch (\Throwable $e) {
-        }
+        \Spatie\Permission\Models\Role::create([
+            'name' => 'admin',
+            'label_en' => 'Administrator',
+            'label_ru' => 'Администратор',
+        ]);
+        \App\Models\User::first()->getAllPermissions();
+        \App\Models\User::first()->assignRole('admin');
     }
 }
