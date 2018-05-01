@@ -4,12 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\UserRequest;
 use App\Http\Traits\Helpers\Admin\UserHelper;
+use App\Http\Traits\Helpers\Admin\PermissionHelper;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 class UserCrudController extends CrudController
 {
     use UserHelper;
+    use PermissionHelper;
 
+    /**
+     * Setup method
+     *
+     * @throws \Exception
+     */
     public function setup()
     {
         /*
@@ -17,9 +24,9 @@ class UserCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(self::model());
-        $this->crud->setRoute(self::route());
-        $this->crud->setEntityNameStrings(self::entities()->whom, self::entities()->plural);
+        $this->crud->setModel(self::userModel());
+        $this->crud->setRoute(self::userRoute());
+        $this->crud->setEntityNameStrings(self::userEntities()->whom, self::userEntities()->plural);
 
         /*
         |--------------------------------------------------------------------------
@@ -27,106 +34,88 @@ class UserCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        /*Columns*/
+        $this->crud->setColumns([
+            [
+                'name' => 'name',
+                'label' => trans('structure.label.name'),
+                'type' => 'text',
+            ],
+            [
+                'name' => 'email',
+                'label' => trans('structure.label.email'),
+                'type' => 'email',
+            ],
+            [
+                'label' => trans('entities.role.singular'),
+                'type' => 'select_multiple',
+                'name' => 'roles',
+                'entity' => 'roles',
+                'attribute' => 'name',
+                'model' => self::permissionModel('role'),
+            ],
+            [
+                'label' => trans('entities.permission.plural'),
+                'type' => 'select_multiple',
+                'name' => 'permissions',
+                'entity' => 'permissions',
+                'attribute' => 'name',
+                'model' => self::permissionModel('permissions'),
+            ],
+        ]);
 
-        //        $this->crud->addFields(
-        //            [
-        //                // two interconnected entities
-        //                'label' => 'User Role Permissions',
-        //                'field_unique_name' => 'user_role_permission',
-        //                'type' => 'checklist_dependency',
-        //                'name' => 'roles_and_permissions', // the methods that defines the relationship in your Model
-        //                'subfields' => [
-        //                    'primary' => [
-        //                        'label' => 'Roles',
-        //                        'name' => 'roles', // the method that defines the relationship in your Model
-        //                        'entity' => 'roles', // the method that defines the relationship in your Model
-        //                        'entity_secondary' => 'permissions', // the method that defines the relationship in your Model
-        //                        'attribute' => 'name', // foreign key attribute that is shown to user
-        //                        'model' => "Backpack\PermissionManager\app\Models\Role", // foreign key model
-        //                        'pivot' => true, // on create&update, do you need to add/delete pivot table entries?]
-        //                        'number_columns' => 3, //can be 1,2,3,4,6
-        //                    ],
-        //                    'secondary' => [
-        //                        'label' => 'Permission',
-        //                        'name' => 'permissions', // the method that defines the relationship in your Model
-        //                        'entity' => 'permissions', // the method that defines the relationship in your Model
-        //                        'entity_primary' => 'roles', // the method that defines the relationship in your Model
-        //                        'attribute' => 'name', // foreign key attribute that is shown to user
-        //                        'model' => "Backpack\PermissionManager\app\Models\Permission", // foreign key model
-        //                        'pivot' => true, // on create&update, do you need to add/delete pivot table entries?]
-        //                        'number_columns' => 3, //can be 1,2,3,4,6
-        //                    ],
-        //                ],
-        //            ]
-        //        );
-        // ------ CRUD FIELDS
-        // $this->crud->addField($options, 'update/create/both');
-        // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        // $this->crud->removeField('name', 'update/create/both');
-        // $this->crud->removeFields($array_of_names, 'update/create/both');
+        /*Fields*/
+        $this->crud->addFields([
+            [
+                'name' => 'name',
+                'label' => trans('structure.label.name'),
+                'type' => 'text',
+            ],
+            [
+                'name' => 'email',
+                'label' => trans('structure.label.email'),
+                'type' => 'email',
+            ],
+            [
+                'name' => 'password',
+                'label' => trans('structure.label.password'),
+                'type' => 'password',
+            ],
+            [
+                'name' => 'password_confirmation',
+                'label' => trans('structure.label.password_confirmation'),
+                'type' => 'password',
+            ],
+            [
+                'label' => trans('entities.permission.plural'),
+                'field_unique_name' => 'user_role_permission',
+                'type' => 'checklist_dependency',
+                'name' => 'roles_and_permissions',
+                'subfields' => [
+                    'primary' => [
+                        'label' => trans('entities.role.singular'),
+                        'name' => 'roles',
+                        'entity' => 'roles',
+                        'entity_secondary' => 'permissions',
+                        'attribute' => 'label_ru',
+                        'model' => self::permissionModel('roles'),
+                        'pivot' => true,
+                        'number_columns' => 3,
+                    ],
+                    'secondary' => [
+                        'label' => trans('entities.permission.plural'),
+                        'name' => 'permissions',
+                        'entity' => 'permissions',
+                        'entity_primary' => 'roles',
+                        'attribute' => 'label_ru',
+                        'model' => self::permissionModel('permissions'),
+                        'pivot' => true,
+                        'number_columns' => 1,
+                    ],
+                ],
+            ],
+        ]);
 
-        // ------ CRUD COLUMNS
-        // $this->crud->addColumn(); // add a single column, at the end of the stack
-        // $this->crud->addColumns(); // add multiple columns, at the end of the stack
-        // $this->crud->removeColumn('column_name'); // remove a column from the stack
-        // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
-        // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
-        // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-
-        // ------ CRUD BUTTONS
-        // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
-        // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
-        // $this->crud->addButtonFromModelFunction($stack, $name, $model_function_name, $position); // add a button whose HTML is returned by a method in the CRUD model
-        // $this->crud->addButtonFromView($stack, $name, $view, $position); // add a button whose HTML is in a view placed at resources\views\vendor\backpack\crud\buttons
-        // $this->crud->removeButton($name);
-        // $this->crud->removeButtonFromStack($name, $stack);
-        // $this->crud->removeAllButtons();
-        // $this->crud->removeAllButtonsFromStack('line');
-
-        // ------ CRUD ACCESS
-        // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
-        // $this->crud->denyAccess(['list', 'create', 'update', 'reorder', 'delete']);
-
-        // ------ CRUD REORDER
-        // $this->crud->enableReorder('label_name', MAX_TREE_LEVEL);
-        // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('reorder');
-
-        // ------ CRUD DETAILS ROW
-        // $this->crud->enableDetailsRow();
-        // NOTE: you also need to do allow access to the right users: $this->crud->allowAccess('details_row');
-        // NOTE: you also need to do overwrite the showDetailsRow($id) method in your EntityCrudController to show whatever you'd like in the details row OR overwrite the views/backpack/crud/details_row.blade.php
-
-        // ------ REVISIONS
-        // You also need to use \Venturecraft\Revisionable\RevisionableTrait;
-        // Please check out: https://laravel-backpack.readme.io/docs/crud#revisions
-        // $this->crud->allowAccess('revisions');
-
-        // ------ AJAX TABLE VIEW
-        // Please note the drawbacks of this though:
-        // - 1-n and n-n columns are not searchable
-        // - date and datetime columns won't be sortable anymore
-        // $this->crud->enableAjaxTable();
-
-        // ------ DATATABLE EXPORT BUTTONS
-        // Show export to PDF, CSV, XLS and Print buttons on the table view.
-        // Does not work well with AJAX datatables.
-        // $this->crud->enableExportButtons();
-
-        // ------ ADVANCED QUERIES
-        // $this->crud->addClause('active');
-        // $this->crud->addClause('type', 'car');
-        // $this->crud->addClause('where', 'name', '==', 'car');
-        // $this->crud->addClause('whereName', 'car');
-        // $this->crud->addClause('whereHas', 'posts', function($query) {
-        //     $query->activePosts();
-        // });
-        // $this->crud->addClause('withoutGlobalScopes');
-        // $this->crud->addClause('withoutGlobalScope', VisibleScope::class);
-        // $this->crud->with(); // eager load relationships
-        // $this->crud->orderBy();
-        // $this->crud->groupBy();
-        // $this->crud->limit();
     }
 
     /**
@@ -137,6 +126,7 @@ class UserCrudController extends CrudController
      */
     public function store(UserRequest $request)
     {
+        $this->_handlePasswordInput($request);
         // use $this->data['entry'] or $this->crud->entry
         $redirect_location = parent::storeCrud($request);
         return $redirect_location;
@@ -150,6 +140,7 @@ class UserCrudController extends CrudController
      */
     public function update(UserRequest $request)
     {
+        $this->_handlePasswordInput($request);
         // use $this->data['entry'] or $this->crud->entry
         $redirect_location = parent::updateCrud($request);
         return $redirect_location;
@@ -165,5 +156,23 @@ class UserCrudController extends CrudController
     {
         // use $this->data['entry'] or $this->crud->entry
         dd('destroy: ', $id);
+    }
+
+    /**
+     * Handle password input fields
+     *
+     * @param UserRequest $request
+     */
+    private function _handlePasswordInput(UserRequest $request)
+    {
+        // Remove fields not present on the user.
+        $request->request->remove('password_confirmation');
+
+        // Encrypt password if specified.
+        if ($request->input('password')) {
+            $request->request->set('password', bcrypt($request->input('password')));
+        } else {
+            $request->request->remove('password');
+        }
     }
 }

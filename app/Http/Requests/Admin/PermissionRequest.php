@@ -8,18 +8,17 @@ use Illuminate\Foundation\Http\FormRequest;
 class PermissionRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the user is authorized to make this request
      *
      * @return bool
      */
     public function authorize()
     {
-        // only allow updates if the user is logged in
         return auth()->user()->hasAnyRole(Role::all());
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Get the validation rules that apply to the request
      *
      * @return array
      */
@@ -31,7 +30,7 @@ class PermissionRequest extends FormRequest
     }
 
     /**
-     * Get the validation attributes that apply to the request.
+     * Get the validation attributes that apply to the request
      *
      * @return array
      */
@@ -43,7 +42,7 @@ class PermissionRequest extends FormRequest
     }
 
     /**
-     * Get the validation messages that apply to the request.
+     * Get the validation messages that apply to the request
      *
      * @return array
      */

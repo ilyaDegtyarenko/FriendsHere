@@ -11,9 +11,9 @@ trait PermissionHelper
      * @param bool $debug
      * @return \Illuminate\Config\Repository|mixed
      */
-    public static function model($name = null, $debug = true)
+    public static function permissionModel($name = null, $debug = true)
     {
-        $name = $name ?? self::core();
+        $name = $name ?? self::permissionCore();
         if ($debug) \DebugBar::addMessage(config('permission.models.' . $name), 'PermissionHelper (model): ');
         return config('permission.models.' . $name);
     }
@@ -25,9 +25,9 @@ trait PermissionHelper
      * @param bool $debug
      * @return mixed
      */
-    public static function route($name = null, $debug = true)
+    public static function permissionRoute($name = null, $debug = true)
     {
-        $name = $name ?? self::core();
+        $name = $name ?? self::permissionCore();
         if ($debug) \DebugBar::addMessage(config('permission.routes')[$name], 'PermissionHelper (route): ');
         return config('permission.routes')[$name];
     }
@@ -38,9 +38,9 @@ trait PermissionHelper
      * @param null $name
      * @return object
      */
-    public static function entities($name = null)
+    public static function permissionEntities($name = null)
     {
-        $name = $name ?? self::core();
+        $name = $name ?? self::permissionCore();
         return (object)[
             'singular' => trans('entities.' . $name . '.singular'),
             'plural' => trans('entities.' . $name . '.plural')
@@ -52,10 +52,9 @@ trait PermissionHelper
      *
      * @return string
      */
-    public static function core()
+    public static function permissionCore()
     {
         $core = explode('/', request()->path());
-        $core = (string)end($core);
-        return $core;
+        return (string)$core[1];
     }
 }

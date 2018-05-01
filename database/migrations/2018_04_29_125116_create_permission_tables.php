@@ -18,6 +18,8 @@ class CreatePermissionTables extends Migration
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('label_en')->nullable();
+            $table->string('label_ru')->nullable();
             $table->string('guard_name');
             $table->timestamps();
         });
@@ -25,6 +27,8 @@ class CreatePermissionTables extends Migration
         Schema::create($tableNames['roles'], function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('label_en')->nullable();
+            $table->string('label_ru')->nullable();
             $table->string('guard_name');
             $table->timestamps();
         });

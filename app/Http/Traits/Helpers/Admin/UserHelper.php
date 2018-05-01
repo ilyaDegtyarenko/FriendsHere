@@ -10,7 +10,7 @@ trait UserHelper
      * @param bool $debug
      * @return \Illuminate\Config\Repository|mixed
      */
-    public static function model($debug = true)
+    public static function userModel($debug = true)
     {
         if ($debug) \DebugBar::addMessage(config('backpack.base.admin_model'), 'UserHelper (model): ');
         return config('backpack.base.admin_model');
@@ -22,7 +22,7 @@ trait UserHelper
      * @param bool $debug
      * @return string
      */
-    public static function route($debug = true)
+    public static function userRoute($debug = true)
     {
         if ($debug) \DebugBar::addMessage(config('backpack.base.route_prefix') . '/user', 'UserHelper (route): ');
         return config('backpack.base.route_prefix') . '/user';
@@ -33,7 +33,7 @@ trait UserHelper
      *
      * @return object
      */
-    public static function entities()
+    public static function userEntities()
     {
         return (object)[
             'singular' => trans('entities.user.singular'),

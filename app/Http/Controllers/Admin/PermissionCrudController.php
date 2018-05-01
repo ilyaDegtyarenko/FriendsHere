@@ -22,19 +22,17 @@ class PermissionCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel(self::model());
-        $this->crud->setRoute(self::route());
-        $this->crud->setEntityNameStrings(self::entities()->singular, self::entities()->plural);
-        
+        $this->crud->setModel(self::permissionModel());
+        $this->crud->setRoute(self::permissionRoute());
+        $this->crud->setEntityNameStrings(self::permissionEntities()->singular, self::permissionEntities()->plural);
+
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
 
-//        $this->crud->setFromDb();
-        $this->crud->addColumn('name');
-        $this->crud->addField('name');
+        $this->crud->setFromDb();
     }
 
     public function store(PermissionRequest $request)
