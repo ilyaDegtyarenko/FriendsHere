@@ -14,4 +14,7 @@ return [
         'email' => 'Email',
         'updated_at' => 'Last update',
     ],
+    'menu' => [
+        'back_to_site' => 'Back to Site'
+    ],
 ];
