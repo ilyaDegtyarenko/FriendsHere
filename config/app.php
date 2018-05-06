@@ -151,6 +151,7 @@ return [
          */
         Barryvdh\Debugbar\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -208,6 +209,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DebugBar' => Barryvdh\Debugbar\Facade::class,
+        'Social' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

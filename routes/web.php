@@ -13,3 +13,12 @@
 Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
+
+Route::get('/authorization/{provider}', function ($provider) {
+    return \Social::driver($provider)->redirect();
+})->name('social.auth');
+
+Route::get('/authorization/{provider}/callback', function ($provider) {
+    $user = \Social::driver($provider)->user();
+    dd($user);
+});
