@@ -3,9 +3,12 @@
 namespace App\Http\Traits\Helpers\Admin;
 
 use App\Models\Admin\Permission;
+use App\Http\Traits\Helpers\Tools\BugReportHelper;
 
 trait UserHelper
 {
+    use BugReportHelper;
+
     /**
      * Returns admin model.
      *
@@ -94,6 +97,7 @@ trait UserHelper
             ];
         }
 
-        abort(500, 'Undefined error in UserHelper trait. Route name: ' . request()->route()->getName());
+        self::bugReport(request(), 'Undefined error');
+        abort(500, 'Undefined error in UserHelper trait. In: ' . class_basename(request()->route()->getAction()['controller']));
     }
 }

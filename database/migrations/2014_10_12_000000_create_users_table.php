@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('avatar')->nullable();
             $table->boolean('is_blocked')->default(false);
+            $table->string('ip', 100)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -11,7 +11,8 @@
 */
 
 Auth::routes();
-Route::get('/', 'HomeController@index')->name('index');
+
+Route::get('/', 'HomeController@index')->middleware('web')->name('index');
 
 Route::namespace('Auth')->prefix('auth')->middleware('web')->group(function () {
     Route::get('{provider}', 'SocialAuthController@binding')->where('provider', '[A-Za-z]+')->name('social.auth');

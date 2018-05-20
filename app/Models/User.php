@@ -14,15 +14,11 @@ class User extends Authenticatable
     use HasRoles;
 
     /**
-     * The attributes that are mass assignable.
+     * Protected for filling columns.
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for arrays.

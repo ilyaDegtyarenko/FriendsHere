@@ -35,16 +35,31 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Social authorization
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    'active-providers' => ['github', 'google'],
+
     'github' => [
-        'client_id' => '21426acecaf9178e6f34',
-        'client_secret' => 'a402452f3d6962a37ff44f186e255eb4c062fb2b',
-        'redirect' => 'http://friends-here.su/authorization/github/callback', //Ссылка на перенаправление при удачной авторизации (3)
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . env('GITHUB_CALLBACK_URL'),
     ],
 
-//    'google' => [
-//        'client_id' => '735464070638-ecnodjnribiunc7a6tkk1q2ht77jrkbg.apps.googleusercontent.com',
-//        'client_secret' => 'VbEeZus4h9AmhrWpT6r4hJ5Z',
-//        'redirect' => 'http://friends-here.su/authorization/google/callback',
-//    ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . env('GOOGLE_CALLBACK_URL'),
+    ],
+
+    'facebook' => [ /*Works with SSL*/
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . env('FACEBOOK_CALLBACK_URL'),
+    ],
 
 ];
