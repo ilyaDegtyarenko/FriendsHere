@@ -15,9 +15,9 @@ class CreateBugReportsTable extends Migration
     {
         Schema::create('bug_reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('place');
-            $table->string('error');
-            $table->string('user_info', 150);
+            $table->text('place');
+            $table->text('error');
+            $table->text('user_info');
             $table->text('comment')->nullable();
             $table->timestamp('timestamp');
         });
