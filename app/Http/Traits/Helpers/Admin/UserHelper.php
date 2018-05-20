@@ -7,7 +7,7 @@ use App\Models\Admin\Permission;
 trait UserHelper
 {
     /**
-     * Returns admin model
+     * Returns admin model.
      *
      * @param bool $debug
      * @return \Illuminate\Config\Repository|mixed
@@ -19,7 +19,7 @@ trait UserHelper
     }
 
     /**
-     * Returns admin route
+     * Returns admin route.
      *
      * @param bool $debug
      * @return string
@@ -31,7 +31,7 @@ trait UserHelper
     }
 
     /**
-     * Returns admin entities
+     * Returns admin entities.
      *
      * @return object
      */
@@ -45,7 +45,7 @@ trait UserHelper
     }
 
     /**
-     * Returns user permissions
+     * Returns user permissions.
      *
      * @param null $request
      * @return object

@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIME_ZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -209,7 +209,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DebugBar' => Barryvdh\Debugbar\Facade::class,
-        'Social' => Laravel\Socialite\Facades\Socialite::class,
+        'SocialAuth' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

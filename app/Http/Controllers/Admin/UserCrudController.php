@@ -9,11 +9,10 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 class UserCrudController extends CrudController
 {
-    use UserHelper;
-    use PermissionHelper;
+    use UserHelper, PermissionHelper;
 
     /**
-     * Setup method
+     * Setup method.
      *
      * @throws \Exception
      */
@@ -115,7 +114,7 @@ class UserCrudController extends CrudController
                 ],
             ],
         ]);
-        
+
 //        if (!config('backpack.permissionmanager.allow_permission_create')) {
 //            $this->crud->denyAccess('create');
 //        }
@@ -128,7 +127,7 @@ class UserCrudController extends CrudController
     }
 
     /**
-     * Store method
+     * Store method.
      *
      * @param UserRequest $request
      * @return \Illuminate\Http\RedirectResponse
@@ -142,7 +141,7 @@ class UserCrudController extends CrudController
     }
 
     /**
-     * Update method
+     * Update method.
      *
      * @param UserRequest $request
      * @return \Illuminate\Http\RedirectResponse
@@ -156,7 +155,7 @@ class UserCrudController extends CrudController
     }
 
     /**
-     * Destroy method
+     * Destroy method.
      *
      * @param int $id
      * @return string|void
@@ -168,7 +167,7 @@ class UserCrudController extends CrudController
     }
 
     /**
-     * Handle password input fields
+     * Handle password input fields.
      *
      * @param UserRequest $request
      */

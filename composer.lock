@@ -51,16 +51,16 @@
         },
         {
             "name": "backpack/base",
-            "version": "0.9.3",
+            "version": "0.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Base.git",
-                "reference": "1fb57b10744327199183c7881f57e44abbda5e71"
+                "reference": "12cd2aa2d81cfd7c837ca02303b02e79e0d3aed2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/1fb57b10744327199183c7881f57e44abbda5e71",
-                "reference": "1fb57b10744327199183c7881f57e44abbda5e71",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/12cd2aa2d81cfd7c837ca02303b02e79e0d3aed2",
+                "reference": "12cd2aa2d81cfd7c837ca02303b02e79e0d3aed2",
                 "shasum": ""
             },
             "require": {
@@ -111,20 +111,20 @@
                 "backpack",
                 "base"
             ],
-            "time": "2018-03-29T18:23:35+00:00"
+            "time": "2018-05-01T16:51:02+00:00"
         },
         {
             "name": "backpack/crud",
-            "version": "3.4.6",
+            "version": "3.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "91b12bc5bbdaab22a343afe1c61430ff1d631cef"
+                "reference": "8389f7d294b2e40a7a5abe4031b5e5eb1b6f0d7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/91b12bc5bbdaab22a343afe1c61430ff1d631cef",
-                "reference": "91b12bc5bbdaab22a343afe1c61430ff1d631cef",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/8389f7d294b2e40a7a5abe4031b5e5eb1b6f0d7d",
+                "reference": "8389f7d294b2e40a7a5abe4031b5e5eb1b6f0d7d",
                 "shasum": ""
             },
             "require": {
@@ -184,24 +184,24 @@
                 "read",
                 "update"
             ],
-            "time": "2018-04-18T20:36:52+00:00"
+            "time": "2018-05-16T10:42:30+00:00"
         },
         {
             "name": "backpack/logmanager",
-            "version": "2.3.18",
+            "version": "2.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/LogManager.git",
-                "reference": "5af503cebd5634c2f87a6ad5648e6de8e429a49f"
+                "reference": "e540f777ccb3795f502e03e44f05942eb229d32f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/5af503cebd5634c2f87a6ad5648e6de8e429a49f",
-                "reference": "5af503cebd5634c2f87a6ad5648e6de8e429a49f",
+                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/e540f777ccb3795f502e03e44f05942eb229d32f",
+                "reference": "e540f777ccb3795f502e03e44f05942eb229d32f",
                 "shasum": ""
             },
             "require": {
-                "backpack/base": "0.*",
+                "backpack/base": "0.9.*",
                 "illuminate/support": "~5.1",
                 "php": ">=5.4.0"
             },
@@ -246,7 +246,7 @@
                 "log manager",
                 "logs"
             ],
-            "time": "2018-03-13T09:55:13+00:00"
+            "time": "2018-05-01T17:05:41+00:00"
         },
         {
             "name": "composer/installers",
@@ -1479,26 +1479,26 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.3.1",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "eb9ae6b49001a4b8031404aba52e6145a2dda3af"
+                "reference": "3f5f94f28bd5108fab011869434209101d4189ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/eb9ae6b49001a4b8031404aba52e6145a2dda3af",
-                "reference": "eb9ae6b49001a4b8031404aba52e6145a2dda3af",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/3f5f94f28bd5108fab011869434209101d4189ae",
+                "reference": "3f5f94f28bd5108fab011869434209101d4189ae",
                 "shasum": ""
             },
             "require": {
                 "nesbot/carbon": "^1.0",
-                "php": ">=5.4",
+                "php": ">=5.6",
                 "symfony/translation": "^2.7|^3.0|^4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0|^6.0",
-                "satooshi/php-coveralls": "^1.0"
+                "phpunit/phpunit": "^5.0|^6.0|^7.0",
+                "satooshi/php-coveralls": "^2.0"
             },
             "type": "library",
             "extra": {
@@ -1540,20 +1540,20 @@
                 "time",
                 "translation"
             ],
-            "time": "2018-03-01T09:51:53+00:00"
+            "time": "2018-05-16T11:53:55+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.19",
+            "version": "v5.6.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4e480de7fe51c52573a95b25ebf85f5c7f5d2087"
+                "reference": "637fd797a6dde8d24a9f07da77e375ec251c5d24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4e480de7fe51c52573a95b25ebf85f5c7f5d2087",
-                "reference": "4e480de7fe51c52573a95b25ebf85f5c7f5d2087",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/637fd797a6dde8d24a9f07da77e375ec251c5d24",
+                "reference": "637fd797a6dde8d24a9f07da77e375ec251c5d24",
                 "shasum": ""
             },
             "require": {
@@ -1679,20 +1679,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-04-30T17:43:38+00:00"
+            "time": "2018-05-15T13:34:20+00:00"
         },
         {
             "name": "laravel/socialite",
-            "version": "v3.0.9",
+            "version": "v3.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "fc1c8d415699e502f3e61cbc61e3250d5bd942eb"
+                "reference": "4d29ba66fdb38ec994b778e5e51657555cc10511"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/fc1c8d415699e502f3e61cbc61e3250d5bd942eb",
-                "reference": "fc1c8d415699e502f3e61cbc61e3250d5bd942eb",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/4d29ba66fdb38ec994b778e5e51657555cc10511",
+                "reference": "4d29ba66fdb38ec994b778e5e51657555cc10511",
                 "shasum": ""
             },
             "require": {
@@ -1741,20 +1741,20 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2017-11-06T16:02:48+00:00"
+            "time": "2018-05-12T17:44:53+00:00"
         },
         {
             "name": "laravel/tinker",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "b22fe905fcefdffae76b011e27c7ac09e07e052b"
+                "reference": "e3086ee8cb1f54a39ae8dcb72d1c37d10128997d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/b22fe905fcefdffae76b011e27c7ac09e07e052b",
-                "reference": "b22fe905fcefdffae76b011e27c7ac09e07e052b",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/e3086ee8cb1f54a39ae8dcb72d1c37d10128997d",
+                "reference": "e3086ee8cb1f54a39ae8dcb72d1c37d10128997d",
                 "shasum": ""
             },
             "require": {
@@ -1804,20 +1804,20 @@
                 "laravel",
                 "psysh"
             ],
-            "time": "2018-04-16T12:10:37+00:00"
+            "time": "2018-05-17T13:42:07+00:00"
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.44",
+            "version": "1.0.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "168dbe519737221dc87d17385cde33073881fd02"
+                "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/168dbe519737221dc87d17385cde33073881fd02",
-                "reference": "168dbe519737221dc87d17385cde33073881fd02",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
+                "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
                 "shasum": ""
             },
             "require": {
@@ -1888,7 +1888,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-04-06T09:58:14+00:00"
+            "time": "2018-05-07T08:44:23+00:00"
         },
         {
             "name": "league/oauth1-client",
@@ -4060,12 +4060,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/Laravel-5-Generators-Extended.git",
-                "reference": "1aabd2955bfa9f433e8baa2a08226bb3d6040ae3"
+                "reference": "9c6066252b9181b61e0ab6f5361fbf508bc78313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Laravel-5-Generators-Extended/zipball/1aabd2955bfa9f433e8baa2a08226bb3d6040ae3",
-                "reference": "1aabd2955bfa9f433e8baa2a08226bb3d6040ae3",
+                "url": "https://api.github.com/repos/laracasts/Laravel-5-Generators-Extended/zipball/9c6066252b9181b61e0ab6f5361fbf508bc78313",
+                "reference": "9c6066252b9181b61e0ab6f5361fbf508bc78313",
                 "shasum": ""
             },
             "require": {
@@ -4103,7 +4103,7 @@
                 "generators",
                 "laravel"
             ],
-            "time": "2018-04-24T13:57:30+00:00"
+            "time": "2018-05-07T06:29:34+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -4167,79 +4167,17 @@
             "time": "2017-12-15T11:13:46+00:00"
         },
         {
-            "name": "mcamara/laravel-localization",
-            "version": "1.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "3764780b0ee3ebb4731632b5ff70ca594fd1735f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/3764780b0ee3ebb4731632b5ff70ca594fd1735f",
-                "reference": "3764780b0ee3ebb4731632b5ff70ca594fd1735f",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~5.2||~5.3||~5.4||~5.5||~5.6",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "orchestra/testbench-browser-kit": "~3.4",
-                "phpunit/phpunit": "6.0.*"
-            },
-            "suggest": {
-                "ext-intl": "*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
-                    ],
-                    "aliases": {
-                        "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
-                    }
-                }
-            },
-            "autoload": {
-                "classmap": [],
-                "psr-0": {
-                    "Mcamara\\LaravelLocalization": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marc Cámara",
-                    "email": "mcamara88@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easy localization for Laravel",
-            "homepage": "https://github.com/mcamara/laravel-localization",
-            "keywords": [
-                "laravel",
-                "localization",
-                "php"
-            ],
-            "time": "2018-04-30T17:28:41+00:00"
-        },
-        {
             "name": "mockery/mockery",
-            "version": "1.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "1bac8c362b12f522fdd1f1fa3556284c91affa38"
+                "reference": "99e29d3596b16dabe4982548527d5ddf90232e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/1bac8c362b12f522fdd1f1fa3556284c91affa38",
-                "reference": "1bac8c362b12f522fdd1f1fa3556284c91affa38",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/99e29d3596b16dabe4982548527d5ddf90232e99",
+                "reference": "99e29d3596b16dabe4982548527d5ddf90232e99",
                 "shasum": ""
             },
             "require": {
@@ -4248,7 +4186,8 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.7|~6.1"
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "~5.7.10|~6.5"
             },
             "type": "library",
             "extra": {
@@ -4277,8 +4216,8 @@
                     "homepage": "http://davedevelopment.co.uk"
                 }
             ],
-            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
-            "homepage": "http://github.com/mockery/mockery",
+            "description": "Mockery is a simple yet flexible PHP mock object framework",
+            "homepage": "https://github.com/mockery/mockery",
             "keywords": [
                 "BDD",
                 "TDD",
@@ -4291,7 +4230,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-10-06T16:20:43+00:00"
+            "time": "2018-05-08T08:54:48+00:00"
         },
         {
             "name": "myclabs/deep-copy",

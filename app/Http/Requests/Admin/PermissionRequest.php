@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class PermissionRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request
+     * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
@@ -18,7 +18,7 @@ class PermissionRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request
+     * Get the validation rules that apply to the request.
      *
      * @return array
      */
@@ -30,7 +30,7 @@ class PermissionRequest extends FormRequest
     }
 
     /**
-     * Get the validation attributes that apply to the request
+     * Get the validation attributes that apply to the request.
      *
      * @return array
      */
@@ -42,7 +42,7 @@ class PermissionRequest extends FormRequest
     }
 
     /**
-     * Get the validation messages that apply to the request
+     * Get the validation messages that apply to the request.
      *
      * @return array
      */

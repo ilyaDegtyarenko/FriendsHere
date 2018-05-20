@@ -11,7 +11,7 @@ class PermissionCrudController extends CrudController
     use PermissionHelper;
 
     /**
-     * Setup method
+     * Setup method.
      *
      * @throws \Exception
      */
@@ -103,7 +103,7 @@ class PermissionCrudController extends CrudController
     }
 
     /**
-     * Store method
+     * Store method.
      *
      * @param PermissionRequest $request
      * @return \Illuminate\Http\RedirectResponse
@@ -115,7 +115,7 @@ class PermissionCrudController extends CrudController
     }
 
     /**
-     * Update method
+     * Update method.
      *
      * @param PermissionRequest $request
      * @return \Illuminate\Http\RedirectResponse

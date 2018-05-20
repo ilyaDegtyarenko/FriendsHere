@@ -11,14 +11,14 @@
 */
 
 Auth::routes();
-Route::get('/', 'HomeController@index');
-Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/authorization/{provider}', function ($provider) {
-    return \Social::driver($provider)->redirect();
-})->name('social.auth');
-
-Route::get('/authorization/{provider}/callback', function ($provider) {
-    $user = \Social::driver($provider)->user();
-    dd($user);
+Route::namespace('Auth')->prefix('auth')->middleware('web')->group(function () {
+    Route::get('{provider}', 'SocialAuthController@binding')->where('provider', '[A-Za-z]+')->name('social.auth');
+    Route::get('{provider}/callback', 'SocialAuthController@handle');
 });
+
+Route::get('get', function () {
+    Auth::logout();
+    dd(Auth::check());
+})->where(['num' => '[0-9]+', 'name' => '[a-z]+']);

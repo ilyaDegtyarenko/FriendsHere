@@ -8,6 +8,14 @@ use Spatie\Permission\Exceptions\UnauthorizedException;
 
 class Role
 {
+    /**
+     * Handler.
+     *
+     * @param $request
+     * @param Closure $next
+     * @param $role
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|mixed
+     */
     public function handle($request, Closure $next, $role)
     {
         \DebugBar::addMessage($role, 'Role middleware: ');

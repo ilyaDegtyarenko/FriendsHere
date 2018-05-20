@@ -5,7 +5,7 @@ namespace App\Http\Traits\Helpers\Admin;
 trait PermissionHelper
 {
     /**
-     * Returns permission model
+     * Returns permission model.
      *
      * @param null $name
      * @param bool $debug
@@ -19,7 +19,7 @@ trait PermissionHelper
     }
 
     /**
-     * Returns permission route
+     * Returns permission route.
      *
      * @param null $name
      * @param bool $debug
@@ -33,7 +33,7 @@ trait PermissionHelper
     }
 
     /**
-     * Returns permission entities
+     * Returns permission entities.
      *
      * @param null $name
      * @return object
@@ -48,7 +48,7 @@ trait PermissionHelper
     }
 
     /**
-     * Returns core name
+     * Returns core name.
      *
      * @return string
      */
@@ -59,7 +59,7 @@ trait PermissionHelper
     }
 
     /**
-     * Returns reverse data
+     * Returns reverse data.
      *
      * @param bool $debug
      * @return object
