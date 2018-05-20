@@ -25,11 +25,12 @@ class BugReportListener
                     'is_blocked' => auth()->user() ? auth()->user()->is_blocked : null,
                 ]),
                 'comment' => $event->comment ?? null,
+                'timestamp' => now(),
             ]);
         } catch (\Exception $exception) {
-            Log::error(' Error writing bug report. ', ['data' => $event]);
+            Log::error(' Error writing bug report. ', ['data' => json_encode($event)]);
         } catch (\Throwable $throwable) {
-            Log::error(' Error writing bug report. ', ['data' => $event]);
+            Log::error(' Error writing bug report. ', ['data' => json_encode($event)]);
         }
     }
 }
