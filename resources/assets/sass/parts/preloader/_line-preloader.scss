@@ -1,0 +1,40 @@
+.line-preloader {
+  position: relative;
+  width: 100%;
+  height: $line-preloader-height;
+  overflow: hidden;
+  background-color: $line-preloader-bg-color;
+}
+
+.line-preloader:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 200px;
+  height: $line-preloader-height;
+  left: -200px;
+  background-color: $line-preloader-el-color;
+  animation: line-preloader $line-preloader-speed linear infinite;
+}
+
+@keyframes line-preloader {
+  from {
+    left: -200px;
+    width: 30%;
+  }
+  50% {
+    width: 30%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    left: 50%;
+  }
+  95% {
+    left: 120%;
+  }
+  to {
+    left: 100%;
+  }
+}

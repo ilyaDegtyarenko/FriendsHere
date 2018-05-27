@@ -1,0 +1,47 @@
+.central-preloader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -16px;
+}
+
+.central-preloader-bar {
+  display: inline-block;
+  width: 5px;
+  height: 50px;
+  border-radius: 4px;
+  animation: central-preloader $central-preloader-speed ease-in-out infinite;
+}
+
+.central-preloader-bar:nth-child(1) {
+  background-color: $central-preloader-first-child-color;
+  animation-delay: 0;
+}
+
+.central-preloader-bar:nth-child(2) {
+  background-color: $central-preloader-second-child-color;
+  animation-delay: 0.09s;
+}
+
+.central-preloader-bar:nth-child(3) {
+  background-color: $central-preloader-third-child-color;
+  animation-delay: .18s;
+}
+
+.central-preloader-bar:nth-child(4) {
+  background-color: $central-preloader-fourth-child-color;
+  animation-delay: .27s;
+}
+
+@keyframes central-preloader {
+  0% {
+    transform: scale(.9);
+  }
+  20% {
+    transform: scale(1, 4.5);
+  }
+  40% {
+    transform: scale(1, 1.5);
+  }
+}

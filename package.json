@@ -20,7 +20,7 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
-    "npm": "^6.0.0",
+    "npm": "^6.1.0",
     "velocity-animate": "^1.5.1"
   }
 }

@@ -5,6 +5,9 @@ return [
         'dashboard' => 'Панель управления',
         'advanced_permissions' => 'Расширенные разрешения',
         'development_zone' => 'Зона разработки',
+        'login' => 'Войти',
+        'registration' => 'Регистрация',
+        'logout' => 'Выйти',
     ],
     'label' => [
         'name' => 'Имя',
@@ -17,4 +20,7 @@ return [
     'menu' => [
         'back_to_site' => 'Вернуться на Сайт'
     ],
+    'element' => [
+        'btn_to_top' => 'Вверх'
+    ]
 ];

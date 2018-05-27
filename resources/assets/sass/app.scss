@@ -1,6 +1,6 @@
 /*Fonts*/
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&subset=cyrillic,cyrillic-ext');
 /*Bootstrap*/
 @import '~bootstrap/scss/bootstrap';
 /*Parts*/
-@import 'parts/preferences', 'parts/common', 'parts/central-preloader', 'parts/line-preloader', 'parts/scroll';
+@import 'parts/preferences', 'parts/common', 'parts/layouts/header', 'parts/layouts/footer', 'parts/scroll', 'parts/preloader/preloader-init';

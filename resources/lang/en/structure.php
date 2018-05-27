@@ -5,6 +5,9 @@ return [
         'dashboard' => 'Dashboard',
         'advanced_permissions' => 'Extended permissions',
         'development_zone' => 'Development zone',
+        'login' => 'Sign in',
+        'registration' => 'Sign Up',
+        'logout' => 'Sign out',
     ],
     'label' => [
         'name' => 'Name',
@@ -17,4 +20,7 @@ return [
     'menu' => [
         'back_to_site' => 'Back to Site'
     ],
+    'element' => [
+        'btn_to_top' => 'Up',
+    ]
 ];

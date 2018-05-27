@@ -1,0 +1,15 @@
+@import 'line-preloader', 'central-preloader';
+
+#preloader-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: $layout-bg-color;
+  z-index: $z-index-preloader;
+}
+
+.line-preloader, .central-preloader {
+  z-index: inherit;
+}

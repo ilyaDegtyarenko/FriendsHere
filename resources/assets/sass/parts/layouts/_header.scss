@@ -1,0 +1,48 @@
+header {
+  position: fixed;
+  opacity: 0;
+  width: 70%;
+  left: 15%;
+  right: 15%;
+  top: -50px;
+  height: 55px;
+  max-height: 55px;
+}
+
+header nav {
+  padding: 0.2rem 1rem !important;
+  @include border-radius(10px 40px);
+}
+
+#navbarSupportedContent {
+  overflow: hidden;
+}
+
+#navbar-toggle {
+  border: 1px solid $navbar-toggle-color;
+  border-radius: 10px 40px 10px 10px;
+  padding: 2px 5px 2px 2px;
+  cursor: pointer;
+  opacity: .4;
+  outline: 0 !important;
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 1.1);
+  -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 1.1);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .1);
+  @include transition(box-shadow, null, .2s);
+}
+
+.navbar-nav, .dropdown-menu {
+  font-weight: $default-fw-regular;
+}
+
+.navbar-toggler-icon {
+  border-radius: 0 30px 0 0;
+}
+
+.nav-link {
+  padding-top: 5px;
+  padding-bottom: 2px;
+  &:active:not(.disabled) {
+    opacity: .7;
+  }
+}

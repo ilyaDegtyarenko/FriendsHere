@@ -1,0 +1,11 @@
+footer {
+  position: fixed;
+  opacity: 0;
+  width: 70%;
+  height: 45px;
+  left: 15%;
+  bottom: -50px;
+  max-height: 55px;
+  @include border-radius(50px 50px 0 0);
+  @extend %layout-box-shadow;
+}
