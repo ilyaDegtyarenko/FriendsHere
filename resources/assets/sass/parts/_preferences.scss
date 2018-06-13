@@ -1,8 +1,13 @@
+/*Communication with Javascript*/
+:root {
+  --body-bg-color: #fafafa;
+}
+
 /*Variables*/
 $default-font: 'Roboto', sans-serif;
 $default-fw-bold: 400;
 $default-fw-regular: 300;
-$body-bg-color: #fcfcf8;
+$body-bg-color: var(--body-bg-color);
 $layout-bg-color: #fff;
 $navbar-toggle-color: rgba(216, 211, 214, .4);
 $z-index-layout: 100;

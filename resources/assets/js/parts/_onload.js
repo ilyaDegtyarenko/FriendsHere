@@ -6,6 +6,7 @@ window.onload = function () {
     let header = document.querySelector('header');
     let footer = document.querySelector('footer');
     let preloader = document.querySelector('#preloader-overlay');
+    let bodyBgColor = getComputedStyle(document.body).getPropertyValue('--body-bg-color').trim();
 
     Velocity(preloader, {opacity: 0}, {
         delay: 1000,
@@ -27,10 +28,7 @@ window.onload = function () {
         easing: 'swing'
     });
 
-    /*$body-bg-color*/
-    Velocity(body, {
-        backgroundColor: '#fcfcf8',
-    }, {
+    Velocity(body, {backgroundColor: bodyBgColor}, {
         delay: 1600,
         duration: 5000,
         easing: 'swing'

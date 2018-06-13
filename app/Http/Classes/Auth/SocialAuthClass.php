@@ -83,6 +83,6 @@ class SocialAuthClass
             return redirect()->route('login')->with('error', trans('messages.auth.social_auth_unavailable'));
         }
 
-        return redirect()->route('index')->with('message', trans('messages.auth.successful_auth', ['name' => $userData->name]));
+        return redirect()->route('home')->with('message', trans('messages.auth.successful_auth', ['name' => $userData->name]));
     }
 }

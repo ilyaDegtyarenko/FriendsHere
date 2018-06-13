@@ -27,7 +27,7 @@
                     @else
                         <li class="nav-item dropdown">
 
-                            <li><a class="nav-link disabled" href="#">{{ auth()->user()->name }}</a></li>
+                            <li><a class="nav-link disabled" href="" onclick="event.preventDefault();">{{ auth()->user()->name }}</a></li>
                             <li class="dropdown-divider m-0"></li>
 
                             <li><a class="nav-link" href="">Профиль</a></li>

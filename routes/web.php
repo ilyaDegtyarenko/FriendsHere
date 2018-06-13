@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,16 +11,25 @@
 |
 */
 
-Auth::routes();
+Route::middleware('web')->group(function () {
 
-Route::get('/', 'HomeController@index')->middleware('web')->name('index');
+    Auth::routes();
 
-Route::namespace('Auth')->prefix('auth')->middleware('web')->group(function () {
-    Route::get('{provider}', 'SocialAuthController@binding')->where('provider', '[A-Za-z]+')->name('social.auth');
-    Route::get('{provider}/callback', 'SocialAuthController@handle');
+    Route::namespace('Initial')->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('blocked', 'BlockController@index')->name('block');
+    });
+
+    Route::namespace('Auth')->prefix('auth')->group(function () {
+        Route::get('{provider}', 'SocialAuthController@binding')->where('provider', '[A-Za-z]+')->name('social.auth');
+        Route::get('{provider}/callback', 'SocialAuthController@handle');
+    });
+
+    Route::get('test', function () {
+        return \App\Http\Traits\Helpers\Tools\BlockUser::blockUser();
+    })->where([
+        'num' => '[0-9]+',
+        'name' => '[a-z]+'
+    ]);
+
 });
-
-Route::get('get', function () {
-    Auth::logout();
-    dd(Auth::check());
-})->where(['num' => '[0-9]+', 'name' => '[a-z]+']);

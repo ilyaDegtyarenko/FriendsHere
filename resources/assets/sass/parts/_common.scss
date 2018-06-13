@@ -33,11 +33,14 @@ header, header nav, footer {
   bottom: 60px;
   overflow-y: auto;
   overflow-x: hidden;
-  background: inherit;
 }
 
 #apex {
   width: 0;
   height: 0;
   visibility: hidden;
+}
+
+a.disabled {
+  cursor: default;
 }
