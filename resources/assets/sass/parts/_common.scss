@@ -1,5 +1,6 @@
 * {
   font-family: $default-font;
+  color: rgba(0, 0, 0, .55);
 }
 
 body {
@@ -44,3 +45,17 @@ header, header nav, footer {
 a.disabled {
   cursor: default;
 }
+
+.card {
+  &, .card-header {
+    background: $layout-bg-color;
+  }
+  .card-header {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: .7px solid rgba(0, 0, 0, .05);
+  }
+  border: 1px solid rgba(0, 0, 0, .05);
+  @extend %block-default;
+}
+

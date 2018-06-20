@@ -10420,7 +10420,7 @@ a.text-dark:focus {
 /*Communication with Javascript*/
 
 :root {
-  --body-bg-color: #fafafa;
+  --body-bg-color: #f9f9f9;
 }
 
 /*Variables*/
@@ -10435,8 +10435,16 @@ footer {
   -webkit-box-shadow: 0 -6px 4px -4px rgba(0, 0, 0, 0.12);
 }
 
+.card {
+  -webkit-box-shadow: 0 0.005em 0.01em 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0.005em 0.01em 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+  border-radius: .025rem;
+  vertical-align: middle;
+}
+
 * {
   font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, 0.55);
 }
 
 body {
@@ -10483,6 +10491,21 @@ footer {
 
 a.disabled {
   cursor: default;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card,
+.card .card-header {
+  background: #fff;
+}
+
+.card .card-header {
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 0.7px solid rgba(0, 0, 0, 0.05);
 }
 
 header {

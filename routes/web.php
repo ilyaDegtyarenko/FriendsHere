@@ -12,17 +12,16 @@
 */
 
 Route::middleware('web')->group(function () {
-
     Auth::routes();
-
-    Route::namespace('Initial')->group(function () {
-        Route::get('/', 'HomeController@index')->name('home');
-        Route::get('blocked', 'BlockController@index')->name('block');
-    });
 
     Route::namespace('Auth')->prefix('auth')->group(function () {
         Route::get('{provider}', 'SocialAuthController@binding')->where('provider', '[A-Za-z]+')->name('social.auth');
         Route::get('{provider}/callback', 'SocialAuthController@handle');
+    });
+
+    Route::namespace('Initial')->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('blocked', 'BlockController@index')->name('block');
     });
 
     Route::get('test', function () {

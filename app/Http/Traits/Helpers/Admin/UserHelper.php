@@ -98,6 +98,6 @@ trait UserHelper
         }
 
         self::bugReport(request(), 'Undefined error');
-        abort(500, 'Undefined error in UserHelper trait. In: ' . class_basename(request()->route()->getAction()['controller']));
+        abort(500, 'Undefined error in UserHelper trait. Calling class: ' . class_basename(request()->route()->getAction()['controller']));
     }
 }
