@@ -12,5 +12,6 @@ return [
         500 => 'Oops, it seems the server fell.',
         503 => 'We apologize, the server stopped responding.',
     ],
+    'error' => 'Error',
     'home' => 'Back to home',
 ];

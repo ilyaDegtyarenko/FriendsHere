@@ -1,8 +1,7 @@
 <html>
 <head>
-    <title>{{ config('backpack.base.project_name') }} - 500</title>
+    <title>{{ env('APP_NAME') }} - {{ trans('errors.error') }} 500</title>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400&subset=cyrillic,cyrillic-ext'>
-
     <style>
         body {
             margin: 0;
@@ -29,7 +28,7 @@
             animation: glitch 2s step-end infinite;
         }
 
-        .container header {
+        .container #glitch-container {
             padding: 0;
             z-index: 3;
             position: absolute;
@@ -41,7 +40,7 @@
             transform: translate(-50%, -50%);
         }
 
-        .container header h1 {
+        .container #glitch-container h1 {
             font-size: 6rem;
             font-weight: 700;
             font-family: 'Source Sans Pro', sans-serif;
@@ -52,7 +51,7 @@
             text-align: center;
         }
 
-        .container header h3 {
+        .container #glitch-container h3 {
             font-size: 1.3rem;
             font-weight: 400;
             font-family: 'Source Sans Pro', sans-serif;
@@ -67,7 +66,7 @@
         }
 
         @media only screen and (min-width: 567px) {
-            .container header h1 {
+            .container #glitch-container h1 {
                 font-size: 15rem;
             }
         }
@@ -515,7 +514,7 @@
                     <button class="offset">{{ trans('errors.home') }}</button>
                 </div>
             </a>
-            <header>
+            <div id='glitch-container'>
                 <h1 class="glitch" data-text="500">500</h1>
                 @isset($message)
                     <h3>{{ $message }}</h3>
@@ -524,7 +523,7 @@
                 @else
                     <h3>{{ trans('errors.default_message.500') }}</h3>
                 @endisset
-            </header>
+            </div>
         </div>
     </div>
 </body>
