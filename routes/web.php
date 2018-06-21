@@ -12,6 +12,7 @@
 */
 
 Route::middleware('web')->group(function () {
+
     Auth::routes();
 
     Route::namespace('Auth')->prefix('auth')->group(function () {

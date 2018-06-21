@@ -14,4 +14,7 @@ return [
     ],
     'error' => 'Error',
     'home' => 'Back to home',
+    'parts' => [
+        'no_file' => 'Something went wrong. File:file_name not found.',
+    ]
 ];

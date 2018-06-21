@@ -10,13 +10,13 @@
     @include('inc.embedding')
 </head>
 <body>
-    @includeFirst(['layouts.header', 'errors.no-file'], ['fileName'=>' \'header\''])
-    @includeFirst(['inc.preloader', 'errors.no-file'], ['fileName'=>' \'preloader\''])
+    @includeFirst(['layouts.header', 'errors.parts.no-file'], ['fileName'=>' \'header\''])
+    @includeFirst(['inc.preloader', 'errors.parts.no-file'], ['fileName'=>' \'preloader\''])
 
     <div id="app">
         <div id="apex"></div>
 
-        {{--@includeFirst(['inc.sidebar', 'errors.no-file'], ['fileName'=>' \'sidebar\''])--}}
+        {{--@includeFirst(['inc.sidebar', 'errors.parts.no-file'], ['fileName'=>' \'sidebar\''])--}}
         <main class="py-4">
             @yield('content', 'Yield \'content\' error')
 
@@ -102,6 +102,6 @@
 
         <climb-component :btn='{{json_encode(['name'=>trans('structure.element.btn_to_top')])}}'></climb-component>
     </div>
-    @includeFirst(['layouts.footer', 'errors.no-file'], ['fileName'=>' \'footer\''])
+    @includeFirst(['layouts.footer', 'errors.parts.no-file'], ['fileName'=>' \'footer\''])
 </body>
 </html>

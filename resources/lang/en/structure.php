@@ -18,9 +18,9 @@ return [
         'updated_at' => 'Last update',
     ],
     'menu' => [
-        'back_to_site' => 'Back to Site'
+        'back_to_site' => 'Back to Site',
     ],
     'element' => [
         'btn_to_top' => 'Up',
-    ]
+    ],
 ];

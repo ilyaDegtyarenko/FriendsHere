@@ -18,9 +18,9 @@ return [
         'updated_at' => 'Последние изменения',
     ],
     'menu' => [
-        'back_to_site' => 'Вернуться на Сайт'
+        'back_to_site' => 'Вернуться на Сайт',
     ],
     'element' => [
-        'btn_to_top' => 'Вверх'
-    ]
+        'btn_to_top' => 'Вверх',
+    ],
 ];
