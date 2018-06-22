@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name') }} - {{ trans('errors.error') }} 400</title>
+    <title>{{ config('app.name') }} - {{ trans('errors.error') }} 419</title>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400&subset=cyrillic,cyrillic-ext'>
     <style>
         body {
@@ -518,13 +518,13 @@
                 </div>
             </a>
             <div id='glitch-container'>
-                <h1 class="glitch" data-text="400">400</h1>
+                <h1 class="glitch" data-text="419">419</h1>
                 @isset($message)
                     <h3>{{ $message }}</h3>
                 @elseif(isset($exception) && $exception->getMessage())
                     <h3>{{ $exception->getMessage() }}</h3>
                 @else
-                    <h3>{{ trans('errors.default_message.400') }}</h3>
+                    <h3>{{ trans('errors.default_message.419') }}</h3>
                 @endisset
             </div>
         </div>

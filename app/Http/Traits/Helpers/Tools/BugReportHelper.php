@@ -13,7 +13,7 @@ trait BugReportHelper
      */
     public static function bugReport($request, $error)
     {
-        $controller = class_basename($request->route()->getAction()['controller']);
+        $controller = $request->route() ? class_basename($request->route()->getAction()['controller']) : 'BugReport';
         $method = $request->method();
         $uri = $request->decodedPath();
 

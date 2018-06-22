@@ -7,5 +7,6 @@ footer {
   bottom: -50px;
   max-height: 55px;
   @include border-radius(50px 50px 0 0);
+  @extend %default-medium-text;
   @extend %layout-box-shadow;
 }

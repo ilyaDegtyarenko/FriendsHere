@@ -1,6 +1,6 @@
 /*Communication with Javascript*/
 :root {
-  --body-bg-color: #f9f9f9;
+  --body-bg-color: #f8f8f8;
 }
 
 /*Variables*/
@@ -9,9 +9,14 @@ $default-fw-bold: 400;
 $default-fw-regular: 300;
 $body-bg-color: var(--body-bg-color);
 $layout-bg-color: #fff;
-$navbar-toggle-color: rgba(216, 211, 214, .4);
+$navbar-toggle-color: rgba(216, 211, 214, .5);
 $z-index-layout: 100;
 $z-index-preloader: 101;
+$default-medium-text-color: #8a8a8a;
+$default-light-text-color: #9c9898;
+$default-link-color: #b1aeae;
+$default-link-color-hover: #a2a2a2;
+$default-link-color-active: #d9d7d7;
 
 // Line preloader
 $line-preloader-speed: 1s;
@@ -52,6 +57,16 @@ $central-preloader-fourth-child-color: #ededed;
 }
 
 /*Stacks*/
+%default-medium-text {
+  color: $default-medium-text-color !important;
+  font-weight: $default-fw-bold !important;
+}
+
+%default-light-text {
+  color: $default-light-text-color !important;
+  font-weight: $default-fw-regular !important;
+}
+
 %default-article-text {
   font-size: 0.9rem;
   line-height: 1.6;

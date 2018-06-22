@@ -10420,7 +10420,7 @@ a.text-dark:focus {
 /*Communication with Javascript*/
 
 :root {
-  --body-bg-color: #f9f9f9;
+  --body-bg-color: #f8f8f8;
 }
 
 /*Variables*/
@@ -10428,6 +10428,12 @@ a.text-dark:focus {
 /*Mixins*/
 
 /*Stacks*/
+
+.navbar-brand,
+footer {
+  color: #8a8a8a !important;
+  font-weight: 400 !important;
+}
 
 footer {
   box-shadow: 0 -6px 4px -4px rgba(0, 0, 0, 0.12);
@@ -10444,11 +10450,38 @@ footer {
 
 * {
   font-family: "Roboto", sans-serif;
-  color: rgba(0, 0, 0, 0.55);
 }
 
 body {
   background: #fff;
+}
+
+a:not(.disabled),
+a:visited:not(.disabled) {
+  color: #b1aeae !important;
+}
+
+a:not(.disabled),
+a:not(.disabled):hover,
+a:not(.disabled):active,
+a:not(.disabled):focus,
+a:visited:not(.disabled),
+a:visited:not(.disabled):hover,
+a:visited:not(.disabled):active,
+a:visited:not(.disabled):focus {
+  text-decoration: none !important;
+}
+
+a:not(.disabled):hover:not(.disabled),
+a:visited:not(.disabled):hover:not(.disabled) {
+  color: #a2a2a2 !important;
+}
+
+a:not(.disabled):active:not(.disabled),
+a:not(.disabled):focus:not(.disabled),
+a:visited:not(.disabled):active:not(.disabled),
+a:visited:not(.disabled):focus:not(.disabled) {
+  color: #d9d7d7 !important;
 }
 
 header,
@@ -10529,11 +10562,11 @@ header nav {
 }
 
 #navbar-toggle {
-  border: 1px solid rgba(216, 211, 214, 0.4);
+  border: 1px solid rgba(216, 211, 214, 0.5);
   border-radius: 10px 40px 10px 10px;
   padding: 2px 5px 2px 2px;
   cursor: pointer;
-  opacity: .4;
+  opacity: .5;
   outline: 0 !important;
   -webkit-box-shadow: 0 0.125rem 0.25rem black;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -10556,10 +10589,6 @@ header nav {
 .nav-link {
   padding-top: 5px;
   padding-bottom: 2px;
-}
-
-.nav-link:active:not(.disabled) {
-  opacity: .7;
 }
 
 footer {

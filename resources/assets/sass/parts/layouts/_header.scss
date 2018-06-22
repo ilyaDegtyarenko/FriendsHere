@@ -23,12 +23,16 @@ header nav {
   border-radius: 10px 40px 10px 10px;
   padding: 2px 5px 2px 2px;
   cursor: pointer;
-  opacity: .4;
+  opacity: .5;
   outline: 0 !important;
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 1.1);
   -moz-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 1.1);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .1);
   @include transition(box-shadow, null, .2s);
+}
+
+.navbar-brand {
+  @extend %default-medium-text;
 }
 
 .navbar-nav, .dropdown-menu {
@@ -42,7 +46,4 @@ header nav {
 .nav-link {
   padding-top: 5px;
   padding-bottom: 2px;
-  &:active:not(.disabled) {
-    opacity: .7;
-  }
 }
